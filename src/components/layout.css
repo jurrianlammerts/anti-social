@@ -4,6 +4,7 @@ body {
   margin: 0;
   background: black;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .preload-transitions {
@@ -20,13 +21,57 @@ body {
 }
 
 body {
-  font-family: "Arimo", sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-size: 12px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+[data-dark-background="true"] {
+  color: white !important;
+}
+
+[data-dark-background="false"] {
+  color: black !important;
+}
+
+.button {
+  color: #fff !important;
+  -webkit-box-shadow: inset 0 0 0 2px #fff;
+  box-shadow: inset 0 0 0 2px #fff;
+  display: inline-block;
+  height: 4rem;
+  padding: 0 2.4rem;
+  margin: 1rem 0;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-5px);
+}
+
+header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  margin: 1.6rem;
 }
 
 /* magic box */
@@ -36,16 +81,23 @@ body {
   scroll-snap-align: center;
   display: flex;
   align-items: center;
+  margin-top: -80px;
 }
 
 .box .text-container {
   position: relative;
   z-index: 2;
   color: white;
-  width: 80vw;
+  width: 100vw;
   display: block;
   font-size: 30px;
   padding: 0 5vw 30vh;
+}
+
+@media only screen and (min-width: 800px) {
+  .box .text-container {
+    width: 80vw;
+  }
 }
 
 .box .text-container h2 {

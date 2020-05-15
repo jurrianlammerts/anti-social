@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 
 import Box from "../components/intersectBox"
-import interiorVideo from "../videos/Busy-People.mp4"
+import socialMediaVideo from "../videos/social-media-slave.mp4"
+import scrollVideo from "../videos/scroll.mp4"
+import Layout from "../components/layout"
 
 function App({ data }) {
   const [preloaded, setPreloaded] = useState(false)
-  const [isIntersecting, setIsIntersecting] = useState(false)
 
   const appClassName = preloaded ? "App" : "App preload-transitions"
 
@@ -15,77 +16,71 @@ function App({ data }) {
       setPreloaded(!preloaded)
     }, 50)
     return () => clearTimeout(timer)
-  }, [])
+  }, [preloaded])
 
   const media = [
     {
-      heading: "King opens Unilever Foods Innovation Centre",
       text:
-        "Today, King Willem-Alexander, opened the highly sustainable Unilever Foods Innovation Centre ‘Hive’ on the Wageningen Campus",
-      image: data.firstImage.childImageSharp.fluid,
+        "We are overwhelmed in a world of created perfectionism, where we are all trying to reach an unattainable level, yet we don’t really realize the effort put into creating an “effortless” facade.",
+      video: socialMediaVideo,
+      isDark: true,
     },
     {
-      heading: "Development of Stek Law",
-      text:
-        "The design reflects the bold and uplifting, yet professional attitude of the law firm.",
-      image: data.secondImage.childImageSharp.fluid,
+      heading: "Endless scrolling through your feed.",
+      // text: "Platforms are being build to make YOU addicted.",
+      video: scrollVideo,
+      isDark: false,
     },
     {
-      heading: "Video with lovely exterior in pink and green tones",
-      text:
-        "Two classrooms in a building from the early 1900's were converted into the spacious living quarters for a young couple.",
-      image: null,
-      video: interiorVideo,
-    },
-    {
-      heading: "Private residence with a touch of magic",
-      text:
-        "Two classrooms in a building from the early 1900's were converted into the spacious living quarters for a young couple.",
-      image: data.thirdImage.childImageSharp.fluid,
+      heading: "We need to disconnect, to reconnect.",
+      image: data.subway.childImageSharp.fluid,
+      isDark: true,
+      buttonText: "Join the revolution",
+      buttonUrl: "https://github.com/jurrianlammerts",
     },
   ]
 
   return (
-    <div className={appClassName}>
-      <div className="box-container">
-        {media.map((item, index) => {
-          return (
-            <Box
-              initial={index % 2}
-              key={index}
-              index={index}
-              backgroundImage={item.image && item.image}
-              video={item.video && item.video}
-            >
-              <h2>{item.heading}</h2>
-              <p>{item.text}</p>
-            </Box>
-          )
-        })}
+    <Layout>
+      <div className={appClassName}>
+        <div className="box-container">
+          {media.map((item, index) => {
+            return (
+              <Box
+                initial={index % 2}
+                key={index}
+                index={index}
+                backgroundImage={item.image && item.image}
+                video={item.video && item.video}
+                isDark={item.isDark}
+              >
+                <h2>{item.heading}</h2>
+                <p>{item.text}</p>
+                {item.buttonUrl && item.buttonText && (
+                  <a
+                    className="button"
+                    href={item.buttonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    alt="github creator"
+                  >
+                    {item.buttonText}
+                  </a>
+                )}
+              </Box>
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    firstImage: file(relativePath: { eq: "0.jpg" }) {
+    subway: file(relativePath: { eq: "subway.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    secondImage: file(relativePath: { eq: "1.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    thirdImage: file(relativePath: { eq: "2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
+        fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
         }
       }
