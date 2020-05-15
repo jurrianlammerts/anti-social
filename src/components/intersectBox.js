@@ -27,7 +27,6 @@ const IntersectBox = ({
   return (
     <div className={activeClassName} ref={ref}>
       <div className="text-container">{children}</div>
-      <div className="fader">0</div>
       {video && (
         <video muted loop playsInline preload="auto" ref={videoRef}>
           <source src={video} type="video/mp4" />
