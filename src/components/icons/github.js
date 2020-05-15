@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function github({ dark }) {
+export default function github() {
   return (
-    <svg className={dark} width="32px" height="32px" viewBox="0 0 439 429">
+    <svg width="32px" height="32px" viewBox="0 0 439 429">
       <g
         id="Page-1"
         stroke="none"

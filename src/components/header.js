@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => {
         rel="noopener noreferrer"
         className="logo"
       >
-        <Github dark={background} />
+        <Github />
       </a>
     </header>
   )

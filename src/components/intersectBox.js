@@ -1,6 +1,5 @@
 import React, { useRef, useContext } from "react"
 import useIntersect from "../useIntersect"
-// import BackgroundContext from "../context/BackgroundContext"
 
 const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100)
 
