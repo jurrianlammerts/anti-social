@@ -26,6 +26,14 @@ body {
   font-size: 12px;
 }
 
+svg .dark {
+  fill: #fff;
+}
+
+svg {
+  fill: #000;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -1,11 +1,8 @@
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import Github from "./icons/github"
-import BackgroundContext from "../context/BackgroundContext"
 
 const Header = ({ siteTitle }) => {
-  const { background } = useContext(BackgroundContext)
-
   return (
     <header>
       <a
@@ -14,7 +11,7 @@ const Header = ({ siteTitle }) => {
         rel="noopener noreferrer"
         className="logo"
       >
-        <Github dark={background === "light"} />
+        <Github dark={background} />
       </a>
     </header>
   )

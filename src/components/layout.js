@@ -26,8 +26,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <BackgroundProvider>{children}</BackgroundProvider>
+      <BackgroundProvider>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        {children}
+      </BackgroundProvider>
     </>
   )
 }

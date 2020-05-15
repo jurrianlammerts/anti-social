@@ -1,5 +1,6 @@
-import React, { useRef } from "react"
+import React, { useRef, useContext } from "react"
 import useIntersect from "../useIntersect"
+// import BackgroundContext from "../context/BackgroundContext"
 
 const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100)
 
@@ -26,9 +27,8 @@ const IntersectBox = ({
 
   return (
     <div className={activeClassName} ref={ref}>
-      <div className="text-container" data-dark-background={isDark}>
-        {children}
-      </div>
+      <div className="text-container">{children}</div>
+
       {video && (
         <video muted loop playsInline preload="auto" ref={videoRef}>
           <source src={video} type="video/mp4" />

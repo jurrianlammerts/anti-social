@@ -9,14 +9,14 @@ import Layout from "../components/layout"
 function App({ data }) {
   const [preloaded, setPreloaded] = useState(false)
 
-  const appClassName = preloaded ? "App" : "App preload-transitions"
+  const appClassName = preloaded ? "" : "preload-transitions"
 
   useEffect(() => {
     const timer = setTimeout(function () {
       setPreloaded(!preloaded)
     }, 50)
     return () => clearTimeout(timer)
-  }, [preloaded])
+  }, [])
 
   const media = [
     {
@@ -42,34 +42,36 @@ function App({ data }) {
 
   return (
     <Layout>
-      <div className={appClassName}>
-        <div className="box-container">
-          {media.map((item, index) => {
-            return (
-              <Box
-                initial={index % 2}
-                key={index}
-                index={index}
-                backgroundImage={item.image && item.image}
-                video={item.video && item.video}
-                isDark={item.isDark}
-              >
-                <h2>{item.heading}</h2>
-                <p>{item.text}</p>
-                {item.buttonUrl && item.buttonText && (
-                  <a
-                    className="button"
-                    href={item.buttonUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    alt="github creator"
-                  >
-                    {item.buttonText}
-                  </a>
-                )}
-              </Box>
-            )
-          })}
+      <div className="App">
+        <div className={appClassName}>
+          <div className="box-container">
+            {media.map((item, index) => {
+              return (
+                <Box
+                  initial={index % 2}
+                  key={index}
+                  index={index}
+                  backgroundImage={item.image && item.image}
+                  video={item.video && item.video}
+                  isDark={item.isDark}
+                >
+                  <h2>{item.heading}</h2>
+                  <p>{item.text}</p>
+                  {item.buttonUrl && item.buttonText && (
+                    <a
+                      className="button"
+                      href={item.buttonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      alt="github creator"
+                    >
+                      {item.buttonText}
+                    </a>
+                  )}
+                </Box>
+              )
+            })}
+          </div>
         </div>
       </div>
     </Layout>
