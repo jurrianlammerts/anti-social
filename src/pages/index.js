@@ -17,7 +17,6 @@ function App({ data }) {
     return () => clearTimeout(timer)
   }, [])
 
-
   const media = [
     {
       heading: "King opens Unilever Foods Innovation Centre",
@@ -48,7 +47,7 @@ function App({ data }) {
 
   return (
     <div className={appClassName}>
-      <div className={boxClassName}>
+      <div className="box-container">
         {media.map((item, index) => {
           return (
             <Box
