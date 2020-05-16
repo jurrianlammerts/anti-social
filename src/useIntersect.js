@@ -3,17 +3,19 @@ import { useEffect, useRef, useState } from "react"
 export default ({ root = null, rootMargin, threshold = 0 }) => {
   const [entry, updateEntry] = useState({})
   const [node, setNode] = useState(null)
+  let observer = null
 
-  // This value is set to true when this code runs in the browser
-
-  const observer = useRef(
-    window &&
-      new window.IntersectionObserver(([entry]) => updateEntry(entry), {
-        root,
-        rootMargin,
-        threshold,
-      })
-  )
+  // Check if code runs in client
+  if (typeof window !== "undefined") {
+    observer = useRef(
+      window &&
+        new window.IntersectionObserver(([entry]) => updateEntry(entry), {
+          root,
+          rootMargin,
+          threshold,
+        })
+    )
+  }
 
   useEffect(() => {
     const { current: currentObserver } = observer
