@@ -38,7 +38,6 @@ function App({ data }) {
       heading: "Abusing different substances during the weekend.",
       // text: "Platforms are being build to make YOU addicted.",
       video: berlinVideo,
-      // verticalText: true,
     },
     {
       heading: "We need to disconnect, to reconnect.",
@@ -60,7 +59,6 @@ function App({ data }) {
                 index={index}
                 backgroundImage={item.image && item.image}
                 video={item.video && item.video}
-                verticalText={item.verticalText}
               >
                 <h1>{item.heading}</h1>
                 <p>{item.text}</p>

@@ -10,7 +10,6 @@ const IntersectBox = ({
   index,
   initial,
   handleIntersect,
-  verticalText,
 }) => {
   const videoRef = useRef(null)
   const videoPlayer = videoRef.current
@@ -23,10 +22,6 @@ const IntersectBox = ({
 
   const activeClassName = outOfViewport ? "box" : "box active"
 
-  const textclassName = verticalText
-    ? "text-container vertical-text"
-    : "text-container "
-
   if (videoPlayer && !outOfViewport) videoPlayer.play()
 
   return (
@@ -38,6 +33,7 @@ const IntersectBox = ({
           <source src={video} type="video/mp4" />
         </video>
       )}
+      
       {backgroundImage && (
         <img src={backgroundImage.src} alt="backgroundImage" />
       )}
