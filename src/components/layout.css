@@ -117,14 +117,6 @@ header {
   }
 }
 
-.box .text-container h2 {
-  font-weight: 700;
-  font-size: 5.5vw;
-  margin: 0 0 1vw 0;
-  padding: 0;
-  line-height: 6vw;
-}
-
 .box .text-container p {
   font-size: 3vw;
   margin: 0;
@@ -157,11 +149,11 @@ header {
 .box-container {
   max-height: 100vh;
   overflow-x: hidden;
-  -ms-scroll-snap-type: proximity;
-  -ms-scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: proximity;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y proximity;
+  -ms-scroll-snap-type: mandatory;
+  -ms-scroll-snap-points-y: repeat(200px);
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(200px);
+  scroll-snap-type: y mandatory;
 }
 
 .box-container:after {
