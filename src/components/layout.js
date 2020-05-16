@@ -16,7 +16,7 @@ import Logo from "./icons/logo"
 const Layout = ({ children }) => {
   const [mainCursor, setMainCursor] = useState({ x: 0, y: 0 })
   const [trailingCursor, setTrailingCursor] = useState({ x: 0, y: 0 })
-  const [outOfBounds, setOutOfBounds] = useState(false)
+  const [outOfBounds, setOutOfBounds] = useState(true)
   const rectRef = useRef(null)
 
   const cursorClassName = outOfBounds ? "cursor hide" : "cursor"
