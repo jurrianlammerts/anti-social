@@ -26,14 +26,14 @@ const IntersectBox = ({
 
   return (
     <div className={activeClassName} ref={ref}>
-      <div className={textclassName}>{children}</div>
+      <div className="box-container">{children}</div>
 
       {video && (
         <video muted loop playsInline ref={videoRef} className="video">
           <source src={video} type="video/mp4" />
         </video>
       )}
-      
+
       {backgroundImage && (
         <img src={backgroundImage.src} alt="backgroundImage" />
       )}
