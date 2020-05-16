@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Box from "../components/intersectBox"
 import socialMediaVideo from "../videos/social-media-slave.mp4"
 import subwayVideo from "../videos/subway.mp4"
+import berlinVideo from "../videos/berlin.mp4"
+
 import Layout from "../components/layout"
 
 function App({ data }) {
@@ -25,14 +27,20 @@ function App({ data }) {
       video: socialMediaVideo,
     },
     {
-      heading: "Moving forward, living day to day.",
-      // text: "Platforms are being build to make YOU addicted.",
+      heading:
+        "Moving forward fast, living in the moment. Not thinking about tommorow.",
       video: subwayVideo,
       // verticalText: true,
     },
     {
+      heading: "Abusing different substances during the weekend.",
+      // text: "Platforms are being build to make YOU addicted.",
+      video: berlinVideo,
+      // verticalText: true,
+    },
+    {
       heading: "We need to disconnect, to reconnect.",
-      image: data.subway.childImageSharp.fluid,
+      // image: data.subway.childImageSharp.fluid,
       buttonText: "Join the revolution",
       buttonUrl: "https://github.com/jurrianlammerts",
     },
