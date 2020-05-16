@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   }, [mainCursor])
 
   const handleMouseMove = (e, callback) => {
-    const { clientX, clientY, screenX, screenY } = e
+    const { clientX, clientY } = e
     var rect = rectRef.current.getBoundingClientRect()
 
     if (
@@ -58,6 +58,7 @@ const Layout = ({ children }) => {
   return (
     <div
       className="App"
+      role="main"
       ref={rectRef}
       onMouseMove={e =>
         handleMouseMove(e, ({ clientX, clientY }) =>
