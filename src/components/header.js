@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => {
       </div>
       <div className="logo">
         <a
-          href="https://github.com/jurrianlammerts"
+          href="https://github.com/jurrianlammerts/anti-social"
           target="_blank"
           rel="noopener noreferrer"
         >

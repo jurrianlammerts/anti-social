@@ -45,7 +45,7 @@ function App({ data }) {
       heading: "We need to disconnect, to reconnect.",
       // image: data.subway.childImageSharp.fluid,
       buttonText: "Join the revolution",
-      buttonUrl: "https://github.com/jurrianlammerts",
+      buttonUrl: "https://github.com/jurrianlammerts/anti-social",
     },
   ]
 
