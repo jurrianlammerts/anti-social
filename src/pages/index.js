@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 // Components
 import Box from "../components/intersectBox"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 // Media
 import socialMediaVideo from "../videos/social-media-slave.mp4"
@@ -43,7 +42,7 @@ function App({ data }) {
     },
     {
       heading: "We need to disconnect, to reconnect.",
-      // image: data.subway.childImageSharp.fluid,
+      image: data.black.childImageSharp.fluid,
       buttonText: "Join the revolution",
       buttonUrl: "https://github.com/jurrianlammerts/anti-social",
     },
@@ -51,7 +50,6 @@ function App({ data }) {
 
   return (
     <Layout>
-      <SEO title="" />
       <div className="App">
         <div className={appClassName}>
           <div className="box-container">
@@ -90,7 +88,7 @@ function App({ data }) {
 
 export const query = graphql`
   query {
-    subway: file(relativePath: { eq: "subway.jpg" }) {
+    black: file(relativePath: { eq: "black.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
