@@ -13,6 +13,7 @@ const IntersectBox = ({
   verticalText,
 }) => {
   const videoRef = useRef(null)
+  const videoPlayer = videoRef.current
 
   const [ref, entry] = useIntersect({
     threshold: buildThresholdArray(),
@@ -26,7 +27,7 @@ const IntersectBox = ({
     ? "text-container vertical-text"
     : "text-container "
 
-  if (videoRef.current && !outOfViewport) videoRef.current.play()
+  if (videoPlayer && !outOfViewport) videoPlayer.play()
 
   return (
     <div className={activeClassName} ref={ref}>

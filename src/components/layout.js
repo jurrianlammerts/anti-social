@@ -42,7 +42,6 @@ const Layout = ({ children }) => {
       clientX > rect.width - 24 ||
       clientY > rect.height - 24
     ) {
-      console.log("out of bounds bitch")
       setOutOfBounds(true)
     } else {
       setOutOfBounds(false)
