@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react"
+import React, { useRef, useEffect } from "react"
 import useIntersect from "../useIntersect"
 
 const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100)
