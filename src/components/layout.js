@@ -12,6 +12,7 @@ import "./layout.css"
 
 import Github from "./icons/github"
 import Logo from "./icons/logo"
+import SEO from "./seo"
 
 const Layout = ({ children }) => {
   const [mainCursor, setMainCursor] = useState({ x: 0, y: 0 })
@@ -70,6 +71,7 @@ const Layout = ({ children }) => {
         )
       }
     >
+      <SEO />
       {children}
 
       <div className="logo left-align">
