@@ -10,7 +10,7 @@ const IntersectBox = ({
   index,
   initial,
   handleIntersect,
-  isDark,
+  verticalText,
 }) => {
   const videoRef = useRef(null)
 
@@ -22,11 +22,15 @@ const IntersectBox = ({
 
   const activeClassName = outOfViewport ? "box" : "box active"
 
+  const textclassName = verticalText
+    ? "text-container vertical-text"
+    : "text-container "
+
   if (videoRef.current && !outOfViewport) videoRef.current.play()
 
   return (
     <div className={activeClassName} ref={ref}>
-      <div className="text-container">{children}</div>
+      <div className={textclassName}>{children}</div>
 
       {video && (
         <video muted loop playsInline preload="auto" ref={videoRef}>

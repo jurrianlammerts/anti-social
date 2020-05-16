@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Box from "../components/intersectBox"
 import socialMediaVideo from "../videos/social-media-slave.mp4"
-import scrollVideo from "../videos/scroll.mp4"
+import subwayVideo from "../videos/subway.mp4"
 import Layout from "../components/layout"
 
 function App({ data }) {
@@ -20,21 +20,19 @@ function App({ data }) {
 
   const media = [
     {
-      text:
-        "We are overwhelmed in a world of created perfectionism, where we are all trying to reach an unattainable level, yet we don’t really realize the effort put into creating an “effortless” facade.",
+      heading:
+        "We are overwhelmed in a world of created perfectionism, where we are all trying to reach an unattainable level.",
       video: socialMediaVideo,
-      isDark: true,
     },
     {
-      heading: "Endless scrolling through your feed.",
+      heading: "Moving forward, living day to day.",
       // text: "Platforms are being build to make YOU addicted.",
-      video: scrollVideo,
-      isDark: false,
+      video: subwayVideo,
+      // verticalText: true,
     },
     {
       heading: "We need to disconnect, to reconnect.",
       image: data.subway.childImageSharp.fluid,
-      isDark: true,
       buttonText: "Join the revolution",
       buttonUrl: "https://github.com/jurrianlammerts",
     },
@@ -53,9 +51,9 @@ function App({ data }) {
                   index={index}
                   backgroundImage={item.image && item.image}
                   video={item.video && item.video}
-                  isDark={item.isDark}
+                  verticalText={item.verticalText}
                 >
-                  <h2>{item.heading}</h2>
+                  <h1>{item.heading}</h1>
                   <p>{item.text}</p>
                   {item.buttonUrl && item.buttonText && (
                     <a
