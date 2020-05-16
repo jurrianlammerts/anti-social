@@ -50,36 +50,34 @@ function App({ data }) {
 
   return (
     <Layout>
-      <div className="App">
-        <div className={appClassName}>
-          <div className="box-container">
-            {media.map((item, index) => {
-              return (
-                <Box
-                  initial={index % 2}
-                  key={index}
-                  index={index}
-                  backgroundImage={item.image && item.image}
-                  video={item.video && item.video}
-                  verticalText={item.verticalText}
-                >
-                  <h1>{item.heading}</h1>
-                  <p>{item.text}</p>
-                  {item.buttonUrl && item.buttonText && (
-                    <a
-                      className="button"
-                      href={item.buttonUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      alt="github creator"
-                    >
-                      {item.buttonText}
-                    </a>
-                  )}
-                </Box>
-              )
-            })}
-          </div>
+      <div className={appClassName}>
+        <div className="box-container">
+          {media.map((item, index) => {
+            return (
+              <Box
+                initial={index % 2}
+                key={index}
+                index={index}
+                backgroundImage={item.image && item.image}
+                video={item.video && item.video}
+                verticalText={item.verticalText}
+              >
+                <h1>{item.heading}</h1>
+                <p>{item.text}</p>
+                {item.buttonUrl && item.buttonText && (
+                  <a
+                    className="button"
+                    href={item.buttonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    alt="github creator"
+                  >
+                    {item.buttonText}
+                  </a>
+                )}
+              </Box>
+            )
+          })}
         </div>
       </div>
     </Layout>

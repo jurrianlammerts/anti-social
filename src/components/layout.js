@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 
 import "./layout.css"
@@ -16,6 +16,10 @@ import Logo from "./icons/logo"
 const Layout = ({ children }) => {
   const [mainCursor, setMainCursor] = useState({ x: 0, y: 0 })
   const [trailingCursor, setTrailingCursor] = useState({ x: 0, y: 0 })
+  const [outOfBounds, setOutOfBounds] = useState(false)
+  const rectRef = useRef(null)
+
+  const cursorClassName = outOfBounds ? "cursor hide" : "cursor"
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -28,7 +32,20 @@ const Layout = ({ children }) => {
   }, [mainCursor])
 
   const handleMouseMove = (e, callback) => {
-    const { clientX, clientY } = e
+    const { clientX, clientY, screenX, screenY } = e
+    var rect = rectRef.current.getBoundingClientRect()
+
+    if (
+      clientX < 24 ||
+      clientY < 24 ||
+      clientX > rect.width - 24 ||
+      clientY > rect.height - 24
+    ) {
+      console.log("out of bounds bitch")
+      setOutOfBounds(true)
+    } else {
+      setOutOfBounds(false)
+    }
 
     setMainCursor({
       x: clientX,
@@ -39,7 +56,9 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <main
+    <div
+      className="App"
+      ref={rectRef}
       onMouseMove={e =>
         handleMouseMove(e, ({ clientX, clientY }) =>
           setTimeout(() => {
@@ -70,7 +89,7 @@ const Layout = ({ children }) => {
 
       <div className="cursors">
         <div
-          className="cursor"
+          className={cursorClassName}
           style={{
             left: mainCursor.x,
             top: mainCursor.y,
@@ -78,14 +97,14 @@ const Layout = ({ children }) => {
         />
 
         <div
-          className="cursor"
+          className={cursorClassName}
           style={{
             left: trailingCursor.x,
             top: trailingCursor.y,
           }}
         />
       </div>
-    </main>
+    </div>
   )
 }
 

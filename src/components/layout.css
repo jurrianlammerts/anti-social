@@ -90,17 +90,31 @@ svg {
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
   pointer-events: none;
+  transition: all ease-in-out 0.3s;
+  transition-property: opacity, height, width;
 }
 
 .cursors .cursor:nth-child(1) {
   background-color: #fff;
+  opacity: 1;
   z-index: 100002;
 }
 .cursors .cursor:nth-child(2) {
   border: 1px solid #fff;
+  opacity: 1;
   z-index: 100001;
   height: 24px;
   width: 24px;
+}
+
+.cursors .cursor:nth-child(1).hide {
+  opacity: 0 !important;
+}
+
+.cursors .cursor:nth-child(2).hide {
+  height: 0px;
+  opacity: 0 !important;
+  width: 0px;
 }
 
 .logo-left {
