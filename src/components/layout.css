@@ -183,3 +183,7 @@ header {
 .vertical-text {
   transform: rotate(-90deg);
 }
+
+#video {
+  position: absolute;
+}
