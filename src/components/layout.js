@@ -9,8 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
+
+import Github from "./icons/github"
+import Logo from "./icons/logo"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +27,21 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <div className="logo-left">
+        <a href="/">
+          <Logo />
+        </a>
+      </div>
+      <div className="logo-right">
+        <a
+          href="https://github.com/jurrianlammerts/anti-social"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github />
+        </a>
+      </div>
+
       {children}
     </>
   )

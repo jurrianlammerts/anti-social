@@ -21,7 +21,8 @@ body {
 }
 
 body {
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 12px;
 }
@@ -79,17 +80,18 @@ svg {
   transform: translateY(-5px);
 }
 
-header {
-  height: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+.logo-left {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
   z-index: 2;
 }
 
-.logo {
-  margin: 1.6rem;
+.logo-right {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  z-index: 2;
 }
 
 /* magic box */
@@ -108,7 +110,7 @@ header {
   width: 100vw;
   display: block;
   font-size: 30px;
-  padding: 0 5vw 30vh;
+  padding: 30vh 5vw 30vh;
 }
 
 @media only screen and (min-width: 800px) {
