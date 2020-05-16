@@ -34,7 +34,7 @@ const IntersectBox = ({
       <div className={textclassName}>{children}</div>
 
       {video && (
-        <video muted loop playsInline ref={videoRef} id="video">
+        <video muted loop playsInline ref={videoRef} className="video">
           <source src={video} type="video/mp4" />
         </video>
       )}

@@ -4,7 +4,7 @@ export default function logo() {
   return (
     <svg width="32px" height="32px" viewBox="0 0 300 300">
       <g
-        id="Page-1"
+        id="Page-2"
         stroke="none"
         strokeWidth="1"
         fill="none"
