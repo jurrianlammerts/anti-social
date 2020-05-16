@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Design`,
-    description: ``,
+    title: `Anti Social`,
+    description: `a message to all of you.`,
     author: `Jurrian Lammerts`,
   },
   plugins: [
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `design`,
-        short_name: `starter`,
+        name: `Anti social`,
+        short_name: `anti-social`,
         start_url: `/`,
         background_color: `#000`,
         theme_color: `#000`,
@@ -34,6 +34,6 @@ module.exports = {
         display: "swap",
       },
     },
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
   ],
 }

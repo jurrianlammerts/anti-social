@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 
+// Components
 import Box from "../components/intersectBox"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+// Media
 import socialMediaVideo from "../videos/social-media-slave.mp4"
 import subwayVideo from "../videos/subway.mp4"
 import berlinVideo from "../videos/berlin.mp4"
-
-import Layout from "../components/layout"
 
 function App({ data }) {
   const [preloaded, setPreloaded] = useState(false)
@@ -48,6 +51,7 @@ function App({ data }) {
 
   return (
     <Layout>
+      <SEO title="" />
       <div className="App">
         <div className={appClassName}>
           <div className="box-container">

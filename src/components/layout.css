@@ -30,7 +30,7 @@ h1 {
   font-size: 40px;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 500px) {
   h1 {
     font-size: 60px;
   }
@@ -99,7 +99,6 @@ header {
   scroll-snap-align: center;
   display: flex;
   align-items: center;
-  margin-top: -80px;
 }
 
 .box .text-container {
