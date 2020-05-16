@@ -72,12 +72,12 @@ const Layout = ({ children }) => {
     >
       {children}
 
-      <div className="logo-left">
+      <div className="logo left-align">
         <a href="/">
           <Logo />
         </a>
       </div>
-      <div className="logo-right">
+      <div className="logo right-align">
         <a
           href="https://github.com/jurrianlammerts/anti-social"
           target="_blank"
